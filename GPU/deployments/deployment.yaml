@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: tomasnorre/ansible-cli-client:latest
+        image: willhallonline/ansible:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
