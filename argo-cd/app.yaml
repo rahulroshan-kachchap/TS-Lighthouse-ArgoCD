@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: example-app
+  name: gpu
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/rahulroshan-kachchap/TS-Lighthouse-ArgoCD.git
     targetRevision: HEAD
-    path: example-app
+    path: GPU
     directory:
       recurse: true
   destination:
