@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: rahulroshank/ansible:2.0
+        image: rahulroshank/ansible:0.1
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
