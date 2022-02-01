@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-deploy
+  name: ansible-deploy
   labels:
-    app: example-app
+    app: ansible-app
   annotations:
 spec:
   selector:
     matchLabels:
-      app: example-app
+      app: ansible-app
   replicas: 1
   strategy:
     type: RollingUpdate
@@ -18,30 +18,9 @@ spec:
   template:
     metadata:
       labels:
-        app: example-app
+        app: ansible-app
     spec:
       containers:
-      - name: example-app
+      - name: ansible-app
         image: rahulroshank/ansible:0.1
         imagePullPolicy: Always
-        ports:
-        - containerPort: 5000
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "50m"
-          limits:
-            memory: "256Mi"
-            cpu: "500m"
-        volumeMounts:
-        - name: secret-volume
-          mountPath: /secrets/
-        - name: config-volume
-          mountPath: /configs/
-      volumes:
-      - name: secret-volume
-        secret:
-          secretName: mysecret
-      - name: config-volume
-        configMap:
-          name: example-config #name of our configmap object

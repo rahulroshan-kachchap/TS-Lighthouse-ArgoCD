@@ -13,8 +13,8 @@ spec:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: example-app
+    namespace: ansible-app
   syncPolicy:
     automated:
-      prune: false
-      selfHeal: false
+      prune: true
+      selfHeal: true
