@@ -24,3 +24,5 @@ spec:
       - name: ansible-app
         image: rahulroshank/ansible:0.1
         imagePullPolicy: Always
+        command: [ "sleep" ]
+        args: [ "infinity" ]
