@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/rahulroshan-kachchap/TS-Lighthouse-ArgoCD.git
     targetRevision: HEAD
-    path: GPU/
+    path: example-app 
     directory:
       recurse: true
   destination:
