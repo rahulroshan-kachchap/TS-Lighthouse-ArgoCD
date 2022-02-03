@@ -1,0 +1,12 @@
+FROM python
+
+RUN pip install pip --upgrade
+RUN pip install ansible
+
+RUN apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    sshpass vim git
+
+COPY script.sh /work
+COPY ansible_files/* /work
+WORKDIR /work
