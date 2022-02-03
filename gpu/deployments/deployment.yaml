@@ -24,5 +24,6 @@ spec:
       - name: ansible-app
         image: rahulroshank/ansible:1.2
         imagePullPolicy: Always
-        command: [ '/bin/sh' '-c' '/work/script.sh' ]
-        
+        command: 
+          - /bin/sh 
+          - /work/script.sh
