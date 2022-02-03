@@ -1,6 +1,6 @@
 FROM python
 
-MKDIR /work
+RUN mkdir /work
 RUN pip install pip --upgrade
 RUN pip install ansible
 

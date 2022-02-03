@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: ansible-app
-        image: rahulroshank/ansible:1.1
+        image: rahulroshank/ansible:1.2
         imagePullPolicy: Always
-        command: [ "sleep" ]
-        args: [ "infinity" ]
+        command: [ '/bin/sh' '-c' '/work/script.sh' ]
+        
