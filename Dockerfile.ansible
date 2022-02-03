@@ -1,10 +1,11 @@
-FROM python:3.7.12-slim-bullseye
+FROM python
 
 RUN pip install pip --upgrade
 RUN pip install ansible
 
 RUN apt-get update -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    sshpass
+    sshpass vim git
+
 
 WORKDIR /work
