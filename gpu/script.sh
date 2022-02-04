@@ -1,4 +1,4 @@
-user='raul'
+user='rahul'
 pass='Password!234'
 ip='192.168.0.123'
 ssh-keygen -t rsa << HERE
@@ -9,7 +9,7 @@ ssh-keygen -t rsa << HERE
 HERE
 echo "ssh-keygen generated successfully"
 sleep 10s
-sshpass -p $pass ssh-copy-id $user@$ip
+sshpass -p $pass ssh-copy-id $user@$ip | tee log1.txt
 if [ $? -eq 0 ];
 then
 	echo "copy worked"
