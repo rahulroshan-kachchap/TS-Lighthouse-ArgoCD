@@ -21,12 +21,14 @@ spec:
       labels:
         app: ansible-app
     spec:
+      volumes:
+      - name: gpu-config-vol
+        configMap:
+            name: gpu-config
       containers:
       - name: ansible-app
         image: rahulroshank/ansible:1.2
         imagePullPolicy: Always
-      volumes:
-      - name: config-volume
-        configMap:
-          name: gpu-config
-
+        volumeMounts:
+            - name: gpu-config-vol
+              mountPath: /work
