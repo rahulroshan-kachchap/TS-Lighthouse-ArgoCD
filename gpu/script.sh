@@ -37,5 +37,3 @@ runforever()
 ########## MAIN ########
 
 runforever
-
-exit 0
