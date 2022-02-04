@@ -5,6 +5,6 @@ metadata:
 data:
   config.json: |
     {
-      "gpu" : "3.0"
+      "gpu" : "4.0"
     }
 # kubectl create configmap gpu-config --from-file ./golang/configs/config.json
