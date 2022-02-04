@@ -5,7 +5,7 @@ metadata:
   labels:
     app: ansible-app
   annotations:
-    argocd.argoproj.io/tracking-id: gpu2.0
+    gpu: 1.0
 spec:
   selector:
     matchLabels:
