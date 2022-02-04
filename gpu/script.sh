@@ -7,8 +7,14 @@ HERE
 echo "ssh-keygen generated successfully"
 sleep 10s
 sshpass -p 'Password!234' ssh-copy-id rahul@192.168.0.123
+if [ $? -eq 0 ];
+then
+	echo "copy worked"
+else
+	echo "copy failed"
 echo "copy public key done"
 sleep 5s
+
 cd /work
 git clone https://github.com/rahulroshan-kachchap/TS-Lighthouse-ArgoCD.git
 sleep 5s
