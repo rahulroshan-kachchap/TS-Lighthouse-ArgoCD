@@ -5,7 +5,7 @@ metadata:
   labels:
     app: ansible-app
   annotations:
-    gpu: 1.0
+    gpu: "1.0"
 spec:
   selector:
     matchLabels:
