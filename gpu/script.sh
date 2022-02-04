@@ -9,7 +9,7 @@ ssh-keygen -t rsa << HERE
 HERE
 echo "ssh-keygen generated successfully"
 sleep 10s
-sshpass -p $pass ssh-copy-id $user@$ip | tee log1.txt
+sshpass -p $pass ssh-copy-id -o StrictHostKeyChecking=no $user@$ip
 if [ $? -eq 0 ];
 then
 	echo "copy worked"
