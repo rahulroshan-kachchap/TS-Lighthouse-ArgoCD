@@ -4,9 +4,7 @@ ssh-keygen -t rsa << HERE
 
 
 HERE
-ssh-copy-id rahul@192.168.0.123 << HERE
-Password!234
-HERE
+sshpass -p 'Password!234' ssh-copy-id rahul@192.168.0.123
 cd /work
 git clone https://github.com/rahulroshan-kachchap/TS-Lighthouse-ArgoCD.git
 cd TS-Lighthouse-ArgoCD
