@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gpu-config
+data:
+  config.json: |
+    {
+      "gpu_driver" : "1.0"
+    }
+# kubectl create configmap example-config --from-file ./golang/configs/config.json
