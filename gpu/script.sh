@@ -1,3 +1,4 @@
+pass='Password!234'
 ssh-keygen -t rsa << HERE
 
 
@@ -6,13 +7,12 @@ ssh-keygen -t rsa << HERE
 HERE
 echo "ssh-keygen generated successfully"
 sleep 10s
-ssh-copy-id -i ~/.ssh/id_rsa.pub rahul@192.168.0.123 -p 'Password!234'
+sshpass -p $pass ssh-copy-id rahul@192.168.0.123
 if [ $? -eq 0 ];
 then
 	echo "copy worked"
 else
 	echo "copy failed"
-	exit -1
 fi
 echo "copy public key done"
 sleep 5s
