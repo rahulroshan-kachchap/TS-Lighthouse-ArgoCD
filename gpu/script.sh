@@ -1,6 +1,4 @@
 #!/bin/bash
-sshpass()
-{
 user='rahul'
 pass='Password!234'
 ip='192.168.0.123'
@@ -21,22 +19,15 @@ else
 fi
 echo "copy public key done"
 sleep 5s
-}
 
-github()
-{
-	cd /work
-	git clone https://github.com/rahulroshan-kachchap/TS-Lighthouse-ArgoCD.git
-	sleep 5s
-	cd TS-Lighthouse-ArgoCD
-	cp gpu/ansible_files/upgrade.sh /work/
-}
+cd /work
+git clone https://github.com/rahulroshan-kachchap/TS-Lighthouse-ArgoCD.git
+sleep 5s
+cd TS-Lighthouse-ArgoCD
+cp gpu/ansible_files/upgrade.sh /work/
 
-runansible()
-{
-	cd /work
-	ansible-playbook --ssh-common-args="-o StrictHostKeyChecking=no" playbook.yaml -i host.ini >> ansible.log
-}
+cd /work
+ansible-playbook --ssh-common-args="-o StrictHostKeyChecking=no" playbook.yaml -i host.ini >> ansible.log
 
 runforever()
 {
@@ -44,12 +35,6 @@ runforever()
 }
 
 ########## MAIN ########
-
-sshpass
-
-github
-
-runansible
 
 runforever
 
