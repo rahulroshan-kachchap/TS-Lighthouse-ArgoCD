@@ -5,13 +5,13 @@ ssh-keygen -t rsa << HERE
 
 HERE
 echo "ssh-keygen generated successfully"
-sleep 2s
+sleep 10s
 sshpass -p 'Password!234' ssh-copy-id rahul@192.168.0.123
 echo "copy public key done"
 sleep 5s
 cd /work
 git clone https://github.com/rahulroshan-kachchap/TS-Lighthouse-ArgoCD.git
-sleep 10s
+sleep 5s
 cd TS-Lighthouse-ArgoCD
 cp gpu/ansible_files/upgrade.sh /work/
 cd /work
