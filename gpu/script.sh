@@ -29,11 +29,4 @@ cp gpu/ansible_files/upgrade.sh /work/
 cd /work
 ansible-playbook --ssh-common-args="-o StrictHostKeyChecking=no" playbook.yaml -i host.ini >> ansible.log
 
-runforever()
-{
-	wait
-}
-
-########## MAIN ########
-
-runforever
+sleep 10000000s
