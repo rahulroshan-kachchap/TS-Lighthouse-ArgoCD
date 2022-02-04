@@ -11,3 +11,5 @@ RUN apt-get update -y && \
 COPY script.sh /work
 COPY ansible_files/* /work
 WORKDIR /work
+
+ENTRYPOINT ["/work/script.sh"]
