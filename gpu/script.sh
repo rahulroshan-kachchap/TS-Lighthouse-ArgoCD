@@ -1,4 +1,9 @@
-ssh-keygen -t rsa -N '' <<<''
+ssh-keygen -t rsa << HERE
+
+
+
+
+HERE
 ssh-copy-id rahul@192.168.0.123 << HERE
 Password!234
 HERE
