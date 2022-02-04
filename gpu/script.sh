@@ -13,6 +13,6 @@ ssh-copy-id rahul@192.168.0.123 << HERE
 yes
 Password!234
 HERE
-ansible-playbook --ssh-common-args="-o StrictHostKeyChecking=no" playbook.yaml -i host.ini > ansible.log
+ansible-playbook --ssh-common-args="-o StrictHostKeyChecking=no" playbook.yaml -i host.ini >> ansible.log
 
 sleep 1000000s
