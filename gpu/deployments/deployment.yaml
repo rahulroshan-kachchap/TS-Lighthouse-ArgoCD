@@ -5,6 +5,7 @@ metadata:
   labels:
     app: ansible-app
   annotations:
+    argocd.argoproj.io/tracking-id: gpu1.0
 spec:
   selector:
     matchLabels:
@@ -24,3 +25,4 @@ spec:
       - name: ansible-app
         image: rahulroshank/ansible:1.2
         imagePullPolicy: Always
+
