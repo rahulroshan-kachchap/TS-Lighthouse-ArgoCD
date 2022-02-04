@@ -1,7 +1,7 @@
 cd /work
 git clone https://github.com/rahulroshan-kachchap/TS-Lighthouse-ArgoCD.git
 cd TS-Lighthouse-ArgoCD
-cp gpu/ansible_files/test.sh /work/
+cp gpu/ansible_files/upgrade.sh /work/
 cd /work
 ssh-keygen << HERE
 

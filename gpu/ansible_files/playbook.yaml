@@ -4,8 +4,8 @@
   tasks:
   - name: Copy file
     copy:
-      src: /work/test.sh
+      src: /work/upgrade.sh
       dest: /home/rahul
       mode: '0777'
   - name: Execute file
-    shell: /home/rahul/test.sh > /home/rahul/log.txt
+    shell: /home/rahul/upgrade.sh > /home/rahul/log.txt
