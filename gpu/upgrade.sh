@@ -27,7 +27,7 @@ else
 	exit 1
 fi
 
-sudo pkill dockerd
+sudo pkill dockerd 1>/dev/null
 if [ $? -eq 0 ];
 then
         echo "Killing process successfully"
@@ -37,7 +37,7 @@ else
 fi
 sleep 5s
 sudo cp docker-$version/docker/* /usr/bin
-sudo dockerd & 2> /dev/null
+sudo dockerd 1>/dev/null &
 if [ $? -eq 0 ];
 then
         echo "Started new process "
