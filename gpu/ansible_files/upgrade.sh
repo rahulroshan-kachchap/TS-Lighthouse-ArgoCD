@@ -1,5 +1,5 @@
 #!/bin/bash
-version=`echo $docker`
+version=`jq -r '.docker' config.json`
 echo "-------Current docker version--------"
 echo `docker --version`
 echo
@@ -11,7 +11,7 @@ start=`date +%s`
 curl -uadmin:AP4BnoFbWBX2EmdxfEdi15G4xm3 -O "http://localhost:8081/artifactory/argocd-poc/docker-$version.tgz"
 mkdir docker-$version
 tar zvxf /home/rahul/docker-$version.tgz -C docker-$version
-sudo cp docker-$version/* /usr/bin
+cp docker-$version/* /usr/bin
 sudo dockerd &
 end=`date +%s`
 echo runtime=$((end-start))s

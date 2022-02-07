@@ -32,6 +32,3 @@ spec:
         volumeMounts:
             - name: gpu-config-vol
               mountPath: /tmp
-        envFrom:
-            - configMapRef:
-                name: gpu-config

@@ -2,9 +2,14 @@
 - hosts: all
   become_user: rahul
   tasks:
-  - name: Copy file
+  - name: Copy upgrade script file
     copy:
       src: /work/upgrade.sh
+      dest: /home/rahul
+      mode: '0777'
+  - name: Copy config file
+    copy:
+      src: /tmp/config.json
       dest: /home/rahul
       mode: '0777'
   - name: Execute file
