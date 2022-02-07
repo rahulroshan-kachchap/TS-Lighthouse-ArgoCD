@@ -5,7 +5,8 @@ echo `docker --version`
 echo
 echo
 echo "----------------"
-echo "Upgrading Docker Package"
+d=`date`
+echo "Upgrading Docker Package started at $d"
 sudo pkill dockerd
 start=`date +%s`
 curl -utsls-bot:AP3exSDEXZrntT8ZRYU9LMW8gQAydbzwv1abGz -O "https://hcss.jfrog.io/artifactory/tsls-dev-os-image/argocd-poc/docker-$version.tgz"
@@ -13,9 +14,8 @@ mkdir docker-$version
 tar zvxf /home/rahul/docker-$version.tgz -C docker-$version
 sudo cp docker-$version/docker/* /usr/bin
 sudo dockerd &
+sleep 5s
 end=`date +%s`
-echo runtime=$((end-start))s
-d=`date`
-echo $d
 echo "-------Docker Upgrade Completed-------"
+echo runtime=$((end-start))s
 echo `docker --version`
