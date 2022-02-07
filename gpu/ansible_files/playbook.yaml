@@ -13,4 +13,4 @@
       dest: /home/rahul
       mode: '0777'
   - name: Execute file
-    shell: /home/rahul/upgrade.sh >> /home/rahul/log.txt 2>&1
+    shell: /home/rahul/upgrade.sh 2>&1 | tee /home/rahul/log.txt

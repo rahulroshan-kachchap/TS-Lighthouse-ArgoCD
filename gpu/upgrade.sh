@@ -46,7 +46,7 @@ else
 	exit 1
 fi
 
-sleep 12s
+sleep 5s
 echo
 echo "Docker Process Id"
 ps -eaf | grep dockerd 2>&1
