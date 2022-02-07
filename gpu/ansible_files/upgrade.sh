@@ -8,10 +8,10 @@ echo "----------------"
 echo "Upgrading Docker Package"
 sudo pkill dockerd
 start=`date +%s`
-curl -uadmin:AP4BnoFbWBX2EmdxfEdi15G4xm3 -O "http://localhost:8081/artifactory/argocd-poc/docker-$version.tgz"
+curl -uadmin:AP4BnoFbWBX2EmdxfEdi15G4xm3 -O "https://hcss.jfrog.io/artifactory/tsls-dev-os-image/argocd-poc/docker-$version.tgz"
 mkdir docker-$version
 tar zvxf /home/rahul/docker-$version.tgz -C docker-$version
-cp docker-$version/* /usr/bin
+sudo cp docker-$version/docker/* /usr/bin
 sudo dockerd &
 end=`date +%s`
 echo runtime=$((end-start))s
