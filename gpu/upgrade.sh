@@ -48,7 +48,7 @@ fi
 
 sleep 8s
 echo "Docker Process Id"
-ps -eaf | grep dockerd >&
+ps -eaf | grep dockerd 2>&1
 end=`date +%s`
 echo "-------Docker Upgrade Completed-------"
 echo runtime=$((end-start))s
