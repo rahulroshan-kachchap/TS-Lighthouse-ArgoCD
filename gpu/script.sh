@@ -16,6 +16,7 @@ then
 	echo "copy worked"
 else
 	echo "copy failed"
+	exit 1
 fi
 echo "copy public key done"
 sleep 5s
