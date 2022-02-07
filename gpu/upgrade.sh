@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 version=`jq -r '.docker' config.json`
 echo "-------Current docker version--------"
 echo `docker --version`
@@ -21,18 +21,19 @@ mkdir docker-$version
 tar zvxf /home/rahul/docker-$version.tgz -C docker-$version
 if [ $? -eq 0 ];
 then
-        echo "Unzipping the file completed"
+        echo "Unzipping file completed"
 else
-        echo "unzipping the file failed"
+        echo "unzipping file failed"
 	exit 1
 fi
 
 sudo pkill dockerd
 if [ $? -eq 0 ];
 then
-        echo "Killing running process successfuly"
+        echo "Killing process successfully"
 else
         echo "Killing process failed"
+	exit 1
 fi
 
 sudo cp docker-$version/docker/* /usr/bin
@@ -42,6 +43,7 @@ then
         echo "Started new process "
 else
         echo "Starting new process failed"
+	exit 1
 fi
 
 sleep 5s

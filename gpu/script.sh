@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 user='rahul'
 pass='Password!234'
 ip='192.168.0.123'
