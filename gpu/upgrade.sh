@@ -35,7 +35,7 @@ else
         echo "Killing process failed"
 	exit 1
 fi
-
+sleep 5s
 sudo cp docker-$version/docker/* /usr/bin
 sudo dockerd 2>&1 &
 if [ $? -eq 0 ];
