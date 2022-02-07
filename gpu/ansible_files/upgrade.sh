@@ -1,9 +1,21 @@
+#!/bin/bash
+version=`echo $docker`
+echo "-------Current docker version--------"
+echo `docker --version`
+echo
+echo
 echo "----------------"
-echo "Upgrade GPU driver"
+echo "Upgrading Docker Package"
+sudo pkill dockerd
 start=`date +%s`
-sleep 5s
+curl -uadmin:AP4BnoFbWBX2EmdxfEdi15G4xm3 -O "http://localhost:8081/artifactory/argocd-poc/docker-$version.tgz"
+mkdir docker-$version
+tar zvxf /home/rahul/docker-$version.tgz -C docker-$version
+sudo cp docker-$version/* /usr/bin
+sudo dockerd &
 end=`date +%s`
 echo runtime=$((end-start))s
 d=`date`
 echo $d
-echo "Upgrade Completed"
+echo "-------Docker Upgrade Completed-------"
+echo `docker --version`
