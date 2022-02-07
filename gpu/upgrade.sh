@@ -27,7 +27,7 @@ else
 	exit 1
 fi
 
-sudo pkill dockerd
+echo Password!234 | sudo pkill dockerd
 if [ $? -eq 0 ];
 then
         echo "Killing process successfully"
