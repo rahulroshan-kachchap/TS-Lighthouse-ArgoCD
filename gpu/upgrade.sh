@@ -37,7 +37,7 @@ else
 fi
 
 sudo cp docker-$version/docker/* /usr/bin
-sudo dockerd &
+sudo dockerd 2>&1 &
 if [ $? -eq 0 ];
 then
         echo "Started new process "
