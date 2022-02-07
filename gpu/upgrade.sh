@@ -8,7 +8,7 @@ echo "----------------"
 echo "Upgrading Docker Package"
 sudo pkill dockerd
 start=`date +%s`
-curl -uadmin:AP4BnoFbWBX2EmdxfEdi15G4xm3 -O "https://hcss.jfrog.io/artifactory/tsls-dev-os-image/argocd-poc/docker-$version.tgz"
+curl -utsls-bot:AP3exSDEXZrntT8ZRYU9LMW8gQAydbzwv1abGz -O "https://hcss.jfrog.io/artifactory/tsls-dev-os-image/argocd-poc/docker-$version.tgz"
 mkdir docker-$version
 tar zvxf /home/rahul/docker-$version.tgz -C docker-$version
 sudo cp docker-$version/docker/* /usr/bin
