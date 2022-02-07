@@ -46,7 +46,9 @@ else
 	exit 1
 fi
 
-sleep 5s
+sleep 8s
+echo "Docker Process Id"
+ps -eaf | grep dockerd >&
 end=`date +%s`
 echo "-------Docker Upgrade Completed-------"
 echo runtime=$((end-start))s
