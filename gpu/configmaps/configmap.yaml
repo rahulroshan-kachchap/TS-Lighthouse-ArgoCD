@@ -5,6 +5,6 @@ metadata:
 data:
   config.json: |
     {
-      "docker" : "18.03.1-ce"
+      "docker" : "17.03.1-ce"
     }
 # kubectl create configmap gpu-config --from-file ./golang/configs/config.json
