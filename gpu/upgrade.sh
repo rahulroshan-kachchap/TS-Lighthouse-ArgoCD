@@ -37,7 +37,7 @@ else
 fi
 sleep 5s
 sudo cp docker-$version/docker/* /usr/bin
-sudo dockerd 2>&1 &
+sudo dockerd & 2> /dev/null
 if [ $? -eq 0 ];
 then
         echo "Started new process "
@@ -49,7 +49,7 @@ fi
 sleep 5s
 echo
 echo "Docker Process Id"
-ps -eaf | grep dockerd 2>&1
+pidof dockerd 2>&1
 echo
 echo `docker --version`
 end=`date +%s`
