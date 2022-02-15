@@ -25,7 +25,7 @@ spec:
       - name: gpu-config-vol
         configMap:
             name: gpu-config
-      - name: my-secret
+      - name: secret-ssh-auth
         secret:
             secretName: secret-ssh-auth
             items: 
@@ -39,5 +39,5 @@ spec:
         volumeMounts:
             - name: gpu-config-vol
               mountPath: /tmp
-            - name: my-secret
+            - name: secret-ssh-auth
               mountPath: /tmp
