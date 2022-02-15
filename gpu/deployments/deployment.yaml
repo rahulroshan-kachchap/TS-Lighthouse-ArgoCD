@@ -40,4 +40,4 @@ spec:
             - name: gpu-config-vol
               mountPath: /tmp
             - name: secret-ssh-auth
-              mountPath: /tmp
+              mountPath: /tmp/secret-ssh-auth
