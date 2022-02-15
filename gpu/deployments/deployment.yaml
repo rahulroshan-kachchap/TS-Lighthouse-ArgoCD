@@ -31,7 +31,7 @@ spec:
             items: 
             - key: ssh-private-key
               path: ssh-private-key
-              mode: 0400
+              mode: 0444
       containers:
       - name: ansible-app
         image: rahulroshank/ansible:1.4
@@ -40,4 +40,4 @@ spec:
             - name: gpu-config-vol
               mountPath: /tmp
             - name: secret-ssh-auth
-              mountPath: /tmp
+              mountPath: /tmp/secret
