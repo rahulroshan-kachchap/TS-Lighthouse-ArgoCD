@@ -37,4 +37,3 @@ spec:
               mountPath: /tmp
             - name: secret-ssh-auth
               mountPath: /tmp/secret-ssh-auth
-              readOnly: true
