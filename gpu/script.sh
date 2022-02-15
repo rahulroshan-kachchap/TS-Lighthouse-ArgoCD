@@ -15,7 +15,7 @@ cd TS-Lighthouse-ArgoCD
 cp gpu/upgrade.sh /work/
 
 cd /work
-ansible-playbook --ssh-common-args="-o StrictHostKeyChecking=no" playbook.yaml -i host.ini >> ansible.log
+ansible-playbook --ssh-common-args="-o StrictHostKeyChecking=no" playbook.yaml -i host.ini --private-key /tmp/secret-ssh-auth/ssh-privatekey.pem >> ansible.log
 cat ansible.log
 
 sleep 10000000s
