@@ -25,10 +25,19 @@ spec:
       - name: gpu-config-vol
         configMap:
             name: gpu-config
+      - name: my-secret
+        secret:
+            secretName: secret-ssh-auth
+            items: 
+            - key: ssh-private-key
+              path: ssh-private-key
+              mode: 0400
       containers:
       - name: ansible-app
         image: rahulroshank/ansible:1.4
         imagePullPolicy: Always
         volumeMounts:
             - name: gpu-config-vol
+              mountPath: /tmp
+            - name: my-secret
               mountPath: /tmp
