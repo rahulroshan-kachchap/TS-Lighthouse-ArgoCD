@@ -31,7 +31,7 @@ spec:
             defaultMode: 256
       containers:
       - name: ansible-app
-        image: rahulroshank/ansible:1.4
+        image: rahulroshank/ansible:1.5
         imagePullPolicy: Always
         volumeMounts:
             - name: gpu-config-vol
